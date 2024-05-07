@@ -1,0 +1,5 @@
+{
+  "name": "grupo-1-externo",
+  "script": "server.js",
+  "instances": "1"
+}
