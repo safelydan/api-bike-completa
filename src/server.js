@@ -1,12 +1,15 @@
-require('dotenv').config()
-
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const app = express()
+const app = express();
 
-router.get('/hello', (req, res) => {
-  res.send('Hello World!!')
-})
+require("./config");
+require("dotenv").config();
 
-app.use(process.env.BASE_ROUTE, router);
-app.listen(process.env.PORT);
+router.get("/hello", (req, res) => {
+  res.send("Hello World!!");
+});
+
+app.use(router);
+app.listen(process.env.PORT, () => {
+  console.log(`Servidor rodando na porta ${process.env.PORT}`);
+});
